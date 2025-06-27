@@ -2,6 +2,11 @@ pipeline {
     agent any
     
     stages {
+        stage('Fix long paths') {
+            steps {
+                bat 'git config --system core.longpaths true'
+            }
+        }
         stage('Checkout') {
             steps {
                 checkout scm
