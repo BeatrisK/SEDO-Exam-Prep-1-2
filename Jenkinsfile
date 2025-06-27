@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Fix long paths') {
             steps {
-                bat 'git config --system core.longpaths true'
+                bat 'git config --global core.longpaths true'
             }
         }
         stage('Checkout') {
